@@ -88,6 +88,11 @@
 
     .hotel__image {
         width: 250px;
+        .img {
+            object-fit: cover;
+            width: 250px;
+            height: 170px;
+        }
     }
 
     .hotel__stars {
@@ -97,5 +102,11 @@
         }
     }
 
+    .hotel__amenities {
+        margin-top: 12px;
+        .SVGInline {
+            margin-right: 8px;
+        }
+    }
     
 }

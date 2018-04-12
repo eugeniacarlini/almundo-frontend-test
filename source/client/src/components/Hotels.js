@@ -1,11 +1,8 @@
 import React from 'react';
 import Hotel from './Hotel';
+import Qcat from './Qcat';
 
 export default class Hotels extends React.Component {
-    constructor(props){
-        super(props);
-    }
-    
     componentWillMount(){
         this.props.fetchHotels();
     }
@@ -25,7 +22,7 @@ export default class Hotels extends React.Component {
                 }
 
                 <aside className="col-md-3 col-sm-12">
-                    filtros
+                    <Qcat />
                 </aside>
 
                 {hotels && hotels.length > 0 && !hotelState.isFetching &&

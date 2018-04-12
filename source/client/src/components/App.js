@@ -1,21 +1,18 @@
 import React from 'react';
 import { Navbar } from 'react-bootstrap';
 import '../styles/App.css';
+import SVGInline from "react-svg-inline"
 import logo from '../assets/images/logo-almundo.svg';
 
 export default class App extends React.Component {
-    constructor(props){
-        super(props);
-    }
-
     render(){
         return(
             <div>
                 <Navbar className="header">
                     <Navbar.Header>
                         <Navbar.Brand>
-                            <a href="/#0">
-                                <img src={logo} alt="Almundo Logo" className="logo"/>
+                            <a className="brand-logo" href="/#0">
+                                <SVGInline svg={ logo }/>
                             </a>
                         </Navbar.Brand>
                     </Navbar.Header>
