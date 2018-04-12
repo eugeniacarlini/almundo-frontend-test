@@ -1,0 +1,101 @@
+.hotel {
+    background: white;
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    padding: 10px;
+    padding-right: 0;
+    box-shadow: 1px 2px 4px #DADADA;
+
+    .hotel__info,
+    .hotel__image,
+    .hotel__price,
+    .hotel__details {
+        display: inline-block;
+    }
+
+    .hotel__details,
+    .hotel__price {
+        vertical-align: top;
+    }
+
+    .hotel__info {
+        width: 80%;
+        border-right: 1px dashed #999;
+    }
+
+    .hotel__price {
+        width: 20%;
+        height: 100%;
+        text-align: center;
+        vertical-align: middle;
+
+        .disclaimer,
+        .price,
+        .hotel__button {
+            display: block;
+        }
+
+        .hotel__button {
+            margin: 0 auto;
+            width: 70%;
+            background: #002A79;
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .price,
+        .disclaimer {
+            margin-bottom: 8px;
+        }
+
+        .disclaimer {
+            font-size: 12px;
+            width: 125px;
+            margin: 0 auto;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .price .symbol,
+        .price .amount {
+            display: inline-block;
+            vertical-align: middle;
+            color: #E16800;
+        }
+
+        .price .amount {
+            font-size: 30px;
+            font-weight: 700;
+            padding-left: 3px;
+        }
+
+        .price .symbol {
+            font-size: 20px;
+        }
+    }
+
+    .hotel__details {
+        margin-left: 20px;
+        width: 60%;
+    }
+
+    .hotel__name {
+        color: #0679B3;
+        font-weight: 700;
+        font-size: 15px;
+    }
+
+    .hotel__image {
+        width: 250px;
+    }
+
+    .hotel__stars {
+        margin-top: 5px;
+        .star {
+            margin-right: 3px;
+        }
+    }
+
+    
+}
