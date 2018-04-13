@@ -1,54 +1,134 @@
 import React from 'react';
+import { PanelGroup, Panel } from 'react-bootstrap';
+import '../styles/Qcat.css';
+import SVGInline from "react-svg-inline"
+import search from '../assets/icons/filters/search.svg';
+import star from '../assets/icons/filters/star.svg';
+import { forEach } from 'lodash';
 
 export default class Qcat extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            activeKey: '1',
+            value: ''
+        };
+
+        this.handleSelect = this.handleSelect.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmitName = this.handleSubmitName.bind(this);
+        this.handleSubmitStars = this.handleSubmitStars.bind(this);
+    }
+
+    handleSelect(activeKey) {
+        this.setState({ activeKey });
+    }
+
+    handleChange(event) {
+        this.setState({value: event.target.value});
+    }
+    
+    handleSubmitName(event) {
+        event.preventDefault();
+    }
+
+    handleSubmitStars(event) {
+        event.preventDefault();
+    }
+
     render(){
+        let fiveStars = [],
+            fourStars = [],
+            threeStars = [],
+            twoStars = [];
+
+        forEach([1, 2, 3, 4 ,5], function(value) {
+            fiveStars.push(<SVGInline  key={`five-stars-${value}`} svg={ star } fill="#FFBB00" width="12px"/>);
+        });
+
+        forEach([1, 2, 3, 4], function(value) {
+            fourStars.push(<SVGInline  key={`four-stars-${value}`} svg={ star } fill="#FFBB00" width="12px"/>);
+        });
+
+        forEach([1, 2, 3], function(value) {
+            threeStars.push(<SVGInline  key={`three-stars-${value}`} svg={ star } fill="#FFBB00" width="12px"/>);
+        });
+
+        forEach([1, 2], function(value) {
+            twoStars.push(<SVGInline  key={`two-stars-${value}`} svg={ star } fill="#FFBB00" width="12px"/>);
+        });
+
         return(
-            <div>
-                <div id="accordion">
-                <div class="card">
-                  <div class="card-header" id="headingOne">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Collapsible Group Item #1
-                      </button>
-                    </h5>
-                  </div>
-              
-                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    </div>
-                  </div>
+            <div className="qcat">
+                <div className="qcat__header">
+                    Filtros
                 </div>
-                <div class="card">
-                  <div class="card-header" id="headingTwo">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        Collapsible Group Item #2
-                      </button>
-                    </h5>
-                  </div>
-                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                    <div class="card-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    </div>
-                  </div>
-                </div>
-                <div class="card">
-                  <div class="card-header" id="headingThree">
-                    <h5 class="mb-0">
-                      <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Collapsible Group Item #3
-                      </button>
-                    </h5>
-                  </div>
-                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                    <div class="card-body">
-                      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                    </div>
-                  </div>
-                </div>
-              </div>
+                <PanelGroup
+                    accordion
+                    activeKey={this.state.activeKey}
+                    onSelect={this.handleSelect}
+                    id="qcat-panel-group">
+
+                    <Panel eventKey="1">
+                        <Panel.Heading>
+                            <SVGInline svg={ search } fill="#0679B3" width="15px"/>
+                            <Panel.Title toggle>
+                                Nombre de hotel
+                            </Panel.Title>
+                        </Panel.Heading>
+                        <Panel.Body collapsible>
+                            <form onSubmit={this.handleSubmitName}>
+                                <input type="text" value={this.state.value} 
+                                        placeholder="Ingrese el nombre del hotel"
+                                        onChange={this.handleChange} 
+                                        className="name-input"/>
+                                <button className="btn name-submit" type="submit">Aceptar</button>
+                            </form>
+                        </Panel.Body>
+                    </Panel>
+                    <Panel eventKey="2">
+                        <Panel.Heading>
+                            <SVGInline svg={ star } fill="#0679B3" width="15px"/>
+                            <Panel.Title toggle>
+                                Estrellas
+                            </Panel.Title>
+                        </Panel.Heading>
+                        <Panel.Body collapsible>
+                            <form className="stars-form" onSubmit={this.handleSubmitStars}>
+                                <label>
+                                    <input type="radio" name="stars" value="all" checked onChange={this.handleSubmitStars}/>
+                                    <p>Todas las estrellas</p>
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="stars" value="five_stars" onChange={this.handleSubmitStars}/>
+                                    { fiveStars }
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="stars" value="four_stars" onChange={this.handleSubmitStars}/>
+                                    { fourStars }
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="stars" value="three_stars" onChange={this.handleSubmitStars}/>
+                                    { threeStars }
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="stars" value="two_stars" onChange={this.handleSubmitStars}/>
+                                    { twoStars }
+                                </label>
+
+                                <label>
+                                    <input type="radio" name="stars" value="one_star" onChange={this.handleSubmitStars}/>
+                                    <SVGInline svg={ star } fill="#FFBB00" width="12px"/>
+                                </label>
+                            </form>
+                        </Panel.Body>
+                    </Panel>
+                </PanelGroup>
             </div>
         );
     }
