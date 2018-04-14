@@ -5,24 +5,19 @@ import SVGInline from "react-svg-inline"
 import search from '../assets/icons/filters/search.svg';
 import star from '../assets/icons/filters/star.svg';
 import { forEach } from 'lodash';
+import Stars from '../utils/Stars';
 
 export default class Qcat extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            activeKey: '1',
             value: ''
         };
 
-        this.handleSelect = this.handleSelect.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmitName = this.handleSubmitName.bind(this);
         this.handleSubmitStars = this.handleSubmitStars.bind(this);
-    }
-
-    handleSelect(activeKey) {
-        this.setState({ activeKey });
     }
 
     handleChange(event) {
@@ -38,27 +33,6 @@ export default class Qcat extends React.Component {
     }
 
     render(){
-        let fiveStars = [],
-            fourStars = [],
-            threeStars = [],
-            twoStars = [];
-
-        forEach([1, 2, 3, 4 ,5], function(value) {
-            fiveStars.push(<SVGInline  key={`five-stars-${value}`} svg={ star } fill="#FFBB00" width="12px"/>);
-        });
-
-        forEach([1, 2, 3, 4], function(value) {
-            fourStars.push(<SVGInline  key={`four-stars-${value}`} svg={ star } fill="#FFBB00" width="12px"/>);
-        });
-
-        forEach([1, 2, 3], function(value) {
-            threeStars.push(<SVGInline  key={`three-stars-${value}`} svg={ star } fill="#FFBB00" width="12px"/>);
-        });
-
-        forEach([1, 2], function(value) {
-            twoStars.push(<SVGInline  key={`two-stars-${value}`} svg={ star } fill="#FFBB00" width="12px"/>);
-        });
-
         return(
             <div className="qcat">
                 <div className="qcat__header">
@@ -101,22 +75,22 @@ export default class Qcat extends React.Component {
 
                                 <label>
                                     <input type="radio" name="stars" value="five_stars" onChange={this.handleSubmitStars}/>
-                                    { fiveStars }
+                                    { Stars["5"] }
                                 </label>
 
                                 <label>
                                     <input type="radio" name="stars" value="four_stars" onChange={this.handleSubmitStars}/>
-                                    { fourStars }
+                                    { Stars["4"] }
                                 </label>
 
                                 <label>
                                     <input type="radio" name="stars" value="three_stars" onChange={this.handleSubmitStars}/>
-                                    { threeStars }
+                                    { Stars["3"] }
                                 </label>
 
                                 <label>
                                     <input type="radio" name="stars" value="two_stars" onChange={this.handleSubmitStars}/>
-                                    { twoStars }
+                                    { Stars["2"] }
                                 </label>
 
                                 <label>
