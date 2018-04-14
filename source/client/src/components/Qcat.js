@@ -64,37 +64,35 @@ export default class Qcat extends React.Component {
                 <div className="qcat__header">
                     Filtros
                 </div>
-                <PanelGroup
-                    accordion
-                    activeKey={this.state.activeKey}
-                    onSelect={this.handleSelect}
-                    id="qcat-panel-group">
-
-                    <Panel eventKey="1">
-                        <Panel.Heading>
-                            <SVGInline svg={ search } fill="#0679B3" width="15px"/>
-                            <Panel.Title toggle>
-                                Nombre de hotel
-                            </Panel.Title>
-                        </Panel.Heading>
-                        <Panel.Body collapsible>
+                <Panel id="qcat-panel-name" defaultExpanded>
+                    <Panel.Heading>
+                        <SVGInline svg={ search } fill="#0679B3" width="15px"/>
+                        <Panel.Title toggle>
+                            Nombre de hotel
+                        </Panel.Title>
+                    </Panel.Heading>
+                    <Panel.Collapse>
+                        <Panel.Body>
                             <form onSubmit={this.handleSubmitName}>
                                 <input type="text" value={this.state.value} 
                                         placeholder="Ingrese el nombre del hotel"
-                                        onChange={this.handleChange} 
+                                        onChange={this.handleChange}
+                                        name="name"
                                         className="name-input"/>
                                 <button className="btn name-submit" type="submit">Aceptar</button>
                             </form>
                         </Panel.Body>
-                    </Panel>
-                    <Panel eventKey="2">
-                        <Panel.Heading>
-                            <SVGInline svg={ star } fill="#0679B3" width="15px"/>
-                            <Panel.Title toggle>
-                                Estrellas
-                            </Panel.Title>
-                        </Panel.Heading>
-                        <Panel.Body collapsible>
+                    </Panel.Collapse>
+                </Panel>
+                <Panel id="qcat-panel-stars" defaultExpanded>
+                    <Panel.Heading>
+                        <SVGInline svg={ star } fill="#0679B3" width="15px"/>
+                        <Panel.Title toggle>
+                            Estrellas
+                        </Panel.Title>
+                    </Panel.Heading>
+                    <Panel.Collapse>
+                        <Panel.Body>
                             <form className="stars-form" onSubmit={this.handleSubmitStars}>
                                 <label>
                                     <input type="radio" name="stars" value="all" checked onChange={this.handleSubmitStars}/>
@@ -127,8 +125,8 @@ export default class Qcat extends React.Component {
                                 </label>
                             </form>
                         </Panel.Body>
-                    </Panel>
-                </PanelGroup>
+                    </Panel.Collapse>
+                </Panel>
             </div>
         );
     }

@@ -13,6 +13,7 @@
         border: 0;
         margin-top: 0;
         border-radius: 0;
+        margin-bottom: 3px;
 
         a.collapsed,
         a:focus,
@@ -78,5 +79,9 @@
 
     p {
         margin: 0;
+    }
+
+    #qcat-panel-name .panel-body {
+        border-bottom: 0;
     }
 }

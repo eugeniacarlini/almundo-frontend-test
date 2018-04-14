@@ -5,6 +5,7 @@
     padding: 10px;
     padding-right: 0;
     box-shadow: 1px 2px 4px #DADADA;
+    min-width: 270px;
 
     .hotel__info,
     .hotel__image,
@@ -77,7 +78,7 @@
 
     .hotel__details {
         margin-left: 20px;
-        width: 60%;
+        width: 42%;
     }
 
     .hotel__name {
@@ -109,4 +110,49 @@
         }
     }
     
+}
+
+@media screen and (max-width: 700px) {
+    .hotel {
+        padding-right: 10px;
+        .hotel__info {
+            display: block;
+            border-right: 0;
+            border-bottom: 1px dashed #999;
+            width: 100%;
+        }
+
+        .hotel__image {
+            display: block;
+        }
+
+        .hotel__details {
+            margin: 0;
+            margin-top: 10px;
+            width: 96%;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .hotel__price {
+            margin-top: 10px;
+        }
+
+        .hotel__price,
+        .hotel__price .hotel__button {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: 377px) and (max-width: 700px) {
+    .hotel__image {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .hotel__image {
+        margin: 0;
+    }
 }
