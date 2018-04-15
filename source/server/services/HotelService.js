@@ -1,4 +1,4 @@
-import {assign} from 'lodash';
+import { assign } from 'lodash';
 import Hotel from '../models/hotel.server.model';
 import { hotels } from '../data/data';
 
@@ -30,21 +30,39 @@ export const findHotels = function(hotelName, stars){
             resolve(hotelsResult);
         });
     });
-}
+};
 
 export const deleteHotel = function(id){
     return new Promise(function(resolve, reject) {
-        let errResult;
         Hotel.findOneAndRemove({ id }, (err, hotel) => {
-            errResult = err;
             if (!hotel){
                 reject('Hotel not found');
             }
             resolve();
         });
-    })
-}
+    });
+};
 
-export const updateHotel = function(id, updateParams) {
-    
-}
+export const insertHotel = function (hotel) {
+    return new Promise(function(resolve, reject) {
+        let errResult;
+        Hotel.create(hotel, (err) => {
+            errResult = err;
+            if (err){
+                reject(errResult);
+            }
+            resolve();
+        });
+    });
+};
+
+export const updateHotel = function(hotel) {
+    return new Promise(function(resolve, reject) {
+        Hotel.findOneAndUpdate({ id: hotel.id }, hotel, (err) => {
+            if (err){
+                reject('Something went wrong.');
+            }
+            resolve();
+        });
+    });
+};

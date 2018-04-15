@@ -49,5 +49,9 @@ Con el server corriendo como expliqué antes podemos probar las acciones CRUD de
 
 **GET:** `http://localhost:3001/api`
 **POST:** `http://localhost:3001/api`
-**PUT:** `http://localhost:3001/api/:id` (hotel id)
+**PUT:** `http://localhost:3001/api`
 **DELETE:** `http://localhost:3001/api/:id` (hotel id)
+
+Usando postman, para POST y PUT deben mandar el body usando raw -> application/json y si lo hacen con cURL pueden probarlo de esta manera:
+
+`curl -H "Content-Type: application/json" -X PUT -d '{"id": "249942", "name": "Stefanos Spa Hotel"}' http://localhost:3001/api/`

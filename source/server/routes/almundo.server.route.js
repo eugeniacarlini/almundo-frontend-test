@@ -9,10 +9,10 @@ const router = express.Router();
 
 router.route('/')
     .get(hotelsController.getHotels)
-    .post(hotelsController.addHotel);
+    .post(hotelsController.addHotel)
+    .put(hotelsController.updateHotel);
 
 router.route('/:id')
-    .put(hotelsController.updateHotel)
     .delete(hotelsController.deleteHotel);
 
 export default router;
