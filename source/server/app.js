@@ -11,8 +11,8 @@ import logger from 'morgan';
 import mongoose from 'mongoose';
 import bb from 'express-busboy';
 import SourceMapSupport from 'source-map-support';
-import Hotel from '../source/models/hotel.server.model'
-import { hotels } from '../source/data/data' 
+import Hotel from './models/hotel.server.model'
+import { hotels } from './data/data' 
 
 //routes
 import almundoRoutes from './routes/almundo.server.route';

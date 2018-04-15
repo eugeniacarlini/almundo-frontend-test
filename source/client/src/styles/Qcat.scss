@@ -87,3 +87,24 @@
         border-bottom: 0;
     }
 }
+
+@media screen and (max-width: 991px) {
+    .qcat {
+        margin-bottom: 20px;
+        
+        #qcat-panel-name {
+            .name-input {
+                width: 70%;
+            }
+            button {
+                width: 23%;
+                margin-left: 20px;
+            }
+        }
+    
+        .panel-heading,
+        .qcat__header {
+            text-align: center;
+        }
+    }
+}
