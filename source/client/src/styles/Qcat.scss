@@ -1,11 +1,13 @@
+@import './Variables.scss';
+
 .qcat {
     .qcat__header {
         height: 44px;
-        background: white;
+        background: $white;
         font-size: 18px;
         font-weight: 700;
         padding: 10px 15px;
-        border-bottom: 3px solid #F4F4F4;
+        border-bottom: 3px solid $body-bg-color;
     }
 
     .panel.panel-default {
@@ -23,16 +25,16 @@
     }
 
     .panel-heading {
-        background: white;
+        background: $white;
         border: 0;
         border-radius: 0;
-        color: #0679B3;
+        color: $highlight-font-color;
         font-weight: 700;
     }
 
     .panel-body {
         border-radius: 0;
-        border-bottom: 3px solid #F4F4F4;
+        border-bottom: 3px solid $body-bg-color;
     }
 
     .panel-group .panel-heading+.panel-collapse>.list-group,
@@ -59,12 +61,12 @@
 
     .name-submit,
     .stars-submit {
-        background: #002A79;
-        color: white;
+        background: $button-bg-color;
+        color: $white;
         margin-left: 32px;
         top: 1px;
         font-weight: 700;
-        border-bottom: 3px solid #00153D;
+        border-bottom: 3px solid $button-br-color;
     }
 
     .stars-form {

@@ -1,24 +1,33 @@
+@import './Variables.scss';
+
 * {
     box-sizing: border-box;
 }
 
 .header {
-    background: #05397D;
+    background: $header-bg-color;
     border-radius: 0;
     border: 0;
-    border-bottom: 2px solid #436F97;
+    border-bottom: 2px solid $header-br-color;
     height: 70px;
 }
 
 body,
 .app-content {
-    background: #F4F4F4;
+    background: $body-bg-color;
 }
 
 .brand-logo .SVGInline {
     display: block;
     position: relative;
     top: -3px;
+}
+
+.zrp-message {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 50px;
+    font-weight: 700;
 }
 
 @media (min-width: 1200px){

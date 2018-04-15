@@ -3,7 +3,7 @@
 */
 
 import mongoose from 'mongoose';
-var Schema = mongoose.Schema({
+let Schema = mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now
@@ -15,4 +15,5 @@ var Schema = mongoose.Schema({
     amenities: [String],
     id: String
 });
+
 export default mongoose.model('Hotel', Schema);

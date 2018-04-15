@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import * as hotelActions from '../actions/hotelActions';
-import Hotels from '../components/Hotels';
+import HotelsList from '../components/HotelsList';
 
 // map state from store to props
 const mapStateToProps = (state, ownProps) => {
@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch) => {
     fetchHotels: () => dispatch(hotelActions.fetchHotels())
   }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Hotels);
+export default connect(mapStateToProps, mapDispatchToProps)(HotelsList);

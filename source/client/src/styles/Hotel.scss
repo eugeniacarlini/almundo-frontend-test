@@ -1,10 +1,12 @@
+@import './Variables.scss';
+
 .hotel {
-    background: white;
+    background: $white;
     margin-bottom: 15px;
-    border: 1px solid #eee;
+    border: 1px solid $grey-999;
     padding: 10px;
     padding-right: 0;
-    box-shadow: 1px 2px 4px #DADADA;
+    box-shadow: 1px 2px 4px $hotel-boxs-color;
     min-width: 270px;
 
     .hotel__info,
@@ -21,7 +23,7 @@
 
     .hotel__info {
         width: 80%;
-        border-right: 1px dashed #999;
+        border-right: 1px dashed $grey-777;
     }
 
     .hotel__price {
@@ -39,8 +41,8 @@
         .hotel__button {
             margin: 0 auto;
             width: 70%;
-            background: #002A79;
-            color: white;
+            background: $button-bg-color;
+            color: $white;
             font-weight: 700;
             font-size: 16px;
         }
@@ -54,7 +56,7 @@
             font-size: 12px;
             width: 125px;
             margin: 0 auto;
-            color: #666;
+            color: $grey-555;
             margin-bottom: 8px;
         }
 
@@ -62,7 +64,7 @@
         .price .amount {
             display: inline-block;
             vertical-align: middle;
-            color: #E16800;
+            color: $price-font-color;
         }
 
         .price .amount {
@@ -82,7 +84,7 @@
     }
 
     .hotel__name {
-        color: #0679B3;
+        color: $highlight-font-color;
         font-weight: 700;
         font-size: 15px;
     }
@@ -113,13 +115,19 @@
 }
 
 @media screen and (max-width: 700px) {
+    .container.app-content,
+    .col-md-3.col-sm-12,
+    .col-md-12 {
+        padding: 0;
+    }
+
     .hotel {
         padding-right: 10px;
         min-width: 100%;
         .hotel__info {
             display: block;
             border-right: 0;
-            border-bottom: 1px dashed #999;
+            border-bottom: 1px dashed $grey-777;
             width: 100%;
         }
 

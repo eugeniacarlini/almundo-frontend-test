@@ -1,40 +1,40 @@
 {
-  "name": "almundo_test_escat",
-  "version": "1.0.0",
-  "description": "Almundo FrontEnd Test - by Adrián Escat",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app_hooked.js"
-  },
-  "keywords": [
-    "almundo",
-    "front",
-    "frontend",
-    "test",
-    "javascript",
-    "react",
-    "redux"
-  ],
-  "author": "Adrián Escat",
-  "license": "ISC",
-  "dependencies": {
-    "babel-preset-es2015-node6": "^0.4.0",
-    "babel-register": "^6.26.0",
-    "babel-runtime": "^6.26.0",
-    "body-parser": "^1.18.2",
-    "core-js": "^2.5.5",
-    "express": "^4.16.3",
-    "express-busboy": "^6.0.1",
-    "mongoose": "^5.0.14",
-    "morgan": "^1.9.0",
-    "react-bootstrap": "^0.32.1",
-    "react-redux": "^5.0.7",
-    "react-router": "^3.2.1",
-    "react-router-bootstrap": "^0.23.3",
-    "react-router-redux": "^4.0.8",
-    "redux": "^3.7.2",
-    "redux-thunk": "^2.2.0",
-    "source-map-support": "^0.5.4"
-  }
+    "name": "almundo_test_escat",
+    "version": "1.0.0",
+    "description": "Almundo FrontEnd Test - by Adrián Escat",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon app_hooked.js"
+    },
+    "keywords": [
+        "almundo",
+        "front",
+        "frontend",
+        "test",
+        "javascript",
+        "react",
+        "redux"
+    ],
+    "author": "Adrián Escat",
+    "license": "ISC",
+    "dependencies": {
+        "babel-preset-es2015-node6": "^0.4.0",
+        "babel-register": "^6.26.0",
+        "babel-runtime": "^6.26.0",
+        "body-parser": "^1.18.2",
+        "core-js": "^2.5.5",
+        "express": "^4.16.3",
+        "express-busboy": "^6.0.1",
+        "mongoose": "^5.0.14",
+        "morgan": "^1.9.0",
+        "react-bootstrap": "^0.32.1",
+        "react-redux": "^5.0.7",
+        "react-router": "^3.2.1",
+        "react-router-bootstrap": "^0.23.3",
+        "react-router-redux": "^4.0.8",
+        "redux": "^3.7.2",
+        "redux-thunk": "^2.2.0",
+        "source-map-support": "^0.5.4"
+    }
 }

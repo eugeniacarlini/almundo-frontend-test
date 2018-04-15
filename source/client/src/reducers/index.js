@@ -3,6 +3,6 @@ import { combineReducers } from 'redux';
 import { hotelReducer } from './hotelReducer';
 
 export default combineReducers({
-  hotelState:hotelReducer,
-  routing
+    hotelState:hotelReducer,
+    routing
 })
